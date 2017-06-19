@@ -17,6 +17,10 @@ module Officesimplify
     request('events', :get, query)
   end
 
+  def self.bank_holidays(query)
+    request('bank_holidays', :get, query)
+  end
+
   private
   def self.request(path, method, params = {})
     raise AuthenticationError.new("Please provide an API key") unless @@api_key
